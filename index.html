@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Кофейня «Гром» — экологичный кофе и уютная атмосфера. Закажите онлайн!" />
+  <title>Кофейня Гром — eco-minimalism</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Inter&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <link rel="stylesheet" href="styles/about.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#main">Главная</a>
+      <a href="#about">О нас</a>
+      <a href="#menu">Меню</a>
+      <a href="#advantages">Преимущества</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="main" class="hero">
+      <div class="hero-content">
+        <h1>Кофейня «Гром»</h1>
+        <p>Экологичный кофе. Натуральные вкусы. Уютная атмосфера.</p>
+        <button onclick="document.getElementById('contacts').scrollIntoView({behavior: 'smooth'})">Сделать заказ</button>
+      </div>
+    </section>
+
+<section id="about" class="content-section">
+  <h2>О нас</h2>
+  <p>Мы заботимся об экологии и вашем здоровье, используя только натуральные ингредиенты и экологичную упаковку.</p>
+
+  <blockquote>
+    «Наша миссия — создавать продукты, которые не только вкусны, но и приносят пользу планете и людям.»
+  </blockquote>
+
+  <div class="values">
+    <h3>Наши ценности</h3>
+    <ul>
+      <li>Экологичность и устойчивость</li>
+      <li>Честность и прозрачность</li>
+      <li>Качество и натуральность</li>
+      <li>Забота о клиентах и обществе</li>
+    </ul>
+  </div>
+
+  <div class="team-photo" aria-label="Фото нашей команды">
+    <img src="team-photo.jpg" alt="Наша команда в уютной атмосфере" />
+  </div>
+
+  <p>Наша команда — это люди, которые любят кофе и природу, создавая для вас лучший продукт с душой.</p>
+
+  <a href="#contacts" class="btn-primary">Связаться с нами</a>
+</section>
+
+
+    <section id="menu" class="content-section">
+      <h2>Меню</h2>
+      <ul>
+        <li>Эспрессо</li>
+        <li>Капучино</li>
+        <li>Латте</li>
+        <li>Веганские десерты</li>
+      </ul>
+    </section>
+
+    <section id="advantages" class="content-section">
+      <h2>Преимущества</h2>
+      <ul>
+        <li>Экологичные материалы</li>
+        <li>Свежие зерна</li>
+        <li>Быстрый заказ онлайн</li>
+        <li>Забота о клиентах</li>
+      </ul>
+    </section>
+
+    <section id="reviews" class="content-section">
+      <h2>Отзывы</h2>
+      <blockquote>«Лучший кофе в городе!» — Анна</blockquote>
+      <blockquote>«Очень уютно и вкусно!» — Игорь</blockquote>
+    </section>
+
+    <section id="contacts" class="content-section">
+      <h2>Контакты</h2>
+      <address>
+        г. Москва, ул. Примерная, 1<br />
+        Тел.: +7 (999) 123-45-67<br />
+        <a href="mailto:info@gromcoffee.ru">info@gromcoffee.ru</a>
+      </address>
+      <div id="map" aria-label="Карта местоположения кофейни Гром" role="region"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Кофейня «Гром»</p>
+  </footer>
+</body>
+</html>
