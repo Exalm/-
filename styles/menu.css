@@ -1,0 +1,210 @@
+.content-section#menu {
+  max-width: 900px;
+  margin: 6rem auto 8rem;
+  padding: 2.5rem 2rem;
+  font-family: 'Inter', sans-serif;
+  color: #2f5d32;
+  background: linear-gradient(135deg, #e6f0e8 0%, #f9faf7 60%, #f0f5ec 100%);
+  border-radius: 32px;
+  box-shadow:
+    0 12px 30px rgba(47, 93, 50, 0.15),
+    inset 0 0 15px rgba(255 255 255 / 0.6);
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.4s ease, transform 0.3s ease;
+  user-select: none;
+}
+
+/* Лёгкая текстура (пример с шумом) */
+.content-section#menu::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill-opacity="0.05"><circle cx="1" cy="1" r="1" fill="%232f5d32"/></svg>') repeat;
+  pointer-events: none;
+  border-radius: 32px;
+  z-index: 0;
+  mix-blend-mode: overlay;
+}
+
+/* Плавное появление */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.content-section#menu h2 {
+  font-family: 'Lora', serif;
+  font-size: clamp(2.8rem, 6vw, 3.5rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #3a6a35;
+  position: relative;
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
+.content-section#menu h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 5px;
+  background: linear-gradient(90deg, #2f5d32, #c7a17a);
+  margin: 0.5rem auto 0;
+  border-radius: 3px;
+  box-shadow: 0 0 12px #c7a17a88;
+  transition: width 0.4s ease;
+}
+
+.content-section#menu h2:hover::after {
+  width: 120px;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem 2.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.menu-item {
+  background: #eaf1e6;
+  border-radius: 20px;
+  padding: 1.8rem 2rem;
+  box-shadow: 0 4px 12px rgba(47, 93, 50, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.menu-item:hover,
+.menu-item:focus-within {
+  box-shadow: 0 8px 24px rgba(47, 93, 50, 0.25);
+  transform: translateY(-6px);
+  outline: none;
+  cursor: pointer;
+  color: #fff; /* меняем цвет текста родителя */
+}
+
+.menu-item:hover .item-name,
+.menu-item:focus-within .item-name,
+.menu-item:hover .item-description,
+.menu-item:focus-within .item-description,
+.menu-item:hover .item-price,
+.menu-item:focus-within .item-price {
+  color: inherit; /* наследуем от родителя */
+  transition: color 0.3s ease;
+}
+
+.item-name {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #2f5d32;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.02em;
+}
+
+.item-description {
+  font-size: 1rem;
+  color: #4a7c4a;
+  margin-bottom: 1.2rem;
+  flex-grow: 1;
+  line-height: 1.5;
+}
+
+.item-price {
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #3a6a35;
+  text-align: right;
+  letter-spacing: 0.03em;
+}
+
+/* Акцент на веганские и растительные блюда */
+.menu-item.vegan {
+  background: linear-gradient(135deg, #e6f0e8 0%, #cde4d9 100%);
+  border: 1.5px solid transparent;
+  border-image: linear-gradient(45deg, #7ba45e, #a3c293) 1;
+  box-shadow:
+    0 4px 8px rgba(123, 164, 94, 0.15),
+    inset 0 0 12px rgba(163, 194, 147, 0.3);
+  transition: 
+    background 0.4s ease,
+    box-shadow 0.4s ease,
+    border-image 0.4s ease,
+    transform 0.3s ease;
+  cursor: pointer;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-item.vegan::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  width: 180%;
+  height: 180%;
+  background: radial-gradient(circle at center, rgba(123, 164, 94, 0.15) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  border-radius: 24px;
+  z-index: 0;
+}
+
+.menu-item.vegan:hover,
+.menu-item.vegan:focus-visible {
+  background: linear-gradient(135deg, #a3c293 0%, #7ba45e 100%);
+  box-shadow:
+    0 8px 20px rgba(123, 164, 94, 0.4),
+    inset 0 0 20px rgba(163, 194, 147, 0.5);
+  border-image: linear-gradient(45deg, #4f6b2f, #7ba45e) 1;
+  transform: translateY(-6px) scale(1.04);
+  outline: none;
+  color: #fff; /* меняем цвет текста */
+}
+
+/* Вложенные элементы в веганских пунктах наследуют белый цвет */
+.menu-item.vegan:hover .item-name,
+.menu-item.vegan:focus-visible .item-name,
+.menu-item.vegan:hover .item-description,
+.menu-item.vegan:focus-visible .item-description,
+.menu-item.vegan:hover .item-price,
+.menu-item.vegan:focus-visible .item-price {
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.menu-item.vegan:hover::before,
+.menu-item.vegan:focus-visible::before {
+  opacity: 1;
+}
+
+
+/* Адаптивность */
+@media (max-width: 600px) {
+  .menu-list {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .content-section#menu {
+    padding: 0 1rem;
+  }
+}
