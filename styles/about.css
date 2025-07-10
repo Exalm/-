@@ -1,0 +1,254 @@
+/* Основной контейнер */
+.content-section#about {
+  max-width: 900px;
+  margin: 5rem auto 6rem;
+  padding: 0 1.5rem;
+  color: #2f5d32;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: box-shadow 0.3s ease;
+  position: relative;
+  background: rgba(255 255 255 / 0.6);
+  backdrop-filter: saturate(180%) blur(12px); /* Эффект глассморфизма */
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(47, 93, 50, 0.12);
+}
+
+/* Анимация появления */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Заголовок с подчеркиванием и анимацией */
+.content-section#about h2 {
+  font-family: 'Lora', serif;
+  font-size: clamp(2.5rem, 5vw, 3.2rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #3a6a35;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+.content-section#about h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #2f5d32, #c7a17a);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.content-section#about h2:hover::after,
+.content-section#about h2:focus-visible::after {
+  width: 100px;
+}
+
+/* Основной текст с плавным изменением цвета при наведении */
+.content-section#about p {
+  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: #4a7c4a;
+  transition: color 0.3s ease;
+  cursor: default;
+}
+
+.content-section#about p:hover,
+.content-section#about p:focus-visible {
+  color: #2f5d32;
+}
+
+/* Цитата с тенью и эффектом масштабирования */
+.content-section#about blockquote {
+  font-style: italic;
+  border-left: 5px solid #a8cbb7;
+  background-color: #e6f0e8;
+  padding: 1rem 1.5rem;
+  max-width: 700px;
+  margin: 2rem auto;
+  color: #3a6a35;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(47, 93, 50, 0.08);
+  transform-origin: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.content-section#about blockquote:hover,
+.content-section#about blockquote:focus-visible {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(47, 93, 50, 0.15);
+}
+
+/* Блок ценностей с плавным наведением и тенью */
+.content-section#about .values {
+  max-width: 700px;
+  margin: 3rem auto 2.5rem;
+}
+
+.content-section#about .values h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #3a6a35;
+  margin-bottom: 1rem;
+  text-align: center;
+  position: relative;
+  cursor: default;
+}
+
+/* Список ценностей с эффектом пульсации при наведении */
+.content-section#about .values ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.content-section#about .values ul li {
+  background: #d9ead3;
+  color: #2f5d32;
+  padding: 0.7rem 1.8rem;
+  border-radius: 40px;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(47, 93, 50, 0.1);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+  will-change: transform;
+}
+
+.content-section#about .values ul li:hover,
+.content-section#about .values ul li:focus-visible {
+  background: #3a6a35;
+  color: #f9f9f6;
+  box-shadow: 0 6px 12px rgba(47, 93, 50, 0.2);
+  transform: translateY(-6px) scale(1.05);
+  outline: none;
+}
+
+/* Фото команды с лёгкой анимацией при наведении */
+.content-section#about .team-photo {
+  max-width: 700px;
+  margin: 3rem auto 2.5rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: default;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow:
+    0 8px 24px rgba(47, 93, 50, 0.15),
+    0 0 20px rgba(199, 161, 122, 0.12);
+}
+
+.content-section#about .team-photo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 24px;
+  user-select: none;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: brightness(0.95);
+}
+
+.content-section#about .team-photo:hover img,
+.content-section#about .team-photo:focus-within img {
+  transform: scale(1.05) rotate(1deg);
+  filter: brightness(1);
+}
+
+/* Кнопка с эффектом пульсации и тенью */
+.content-section#about a.btn-primary {
+  display: inline-block;
+  background: linear-gradient(135deg, #2f5d32, #c7a17a);
+  color: #fff;
+  padding: 1rem 3rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow:
+    0 10px 25px rgba(47, 93, 50, 0.35),
+    0 0 15px rgba(199, 161, 122, 0.6);
+  transition:
+    background-color 0.4s ease,
+    transform 0.25s ease,
+    box-shadow 0.4s ease;
+  user-select: none;
+  cursor: pointer;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.content-section#about a.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background: rgba(255 255 255 / 0.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.content-section#about a.btn-primary:hover::before,
+.content-section#about a.btn-primary:focus-visible::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.content-section#about a.btn-primary:hover,
+.content-section#about a.btn-primary:focus-visible {
+  background: linear-gradient(135deg, #c7a17a, #2f5d32);
+  transform: scale(1.1);
+  box-shadow:
+    0 14px 35px rgba(47, 93, 50, 0.5),
+    0 0 25px rgba(199, 161, 122, 0.8);
+  outline: none;
+}
+
+.content-section#about a.btn-primary {
+  display: block;       /* Сделать кнопку блочным элементом */
+  margin: 0 auto;       /* Центрирование по горизонтали */
+  /* остальные ваши стили остаются без изменений */
+}
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .content-section#about .values ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .content-section#about .values ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .content-section#about p,
+  .content-section#about blockquote,
+  .content-section#about .values,
+  .content-section#about .team-photo {
+    padding: 0 1rem;
+  }
+}
