@@ -23,15 +23,33 @@
 
       <!-- navbar -->
 
+      <!-- Бургер-меню (скрыто на десктопе, видно на мобиле) -->
+    <button class="burger" aria-label="Открыть меню" aria-expanded="false"  aria-controls="mobile-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+    </button>
+
+    <!-- Десктопное меню -->
     <nav>
-      <a href="#main">Главная</a>
-      <a href="#about">О нас</a>
-      <a href="#menu">Меню</a>
-      <a href="#advantages">Преимущества</a>
-      <a href="#reviews">Отзывы</a>
-      <a href="#contacts">Контакты</a>
+    <a href="#main">Главная</a>
+    <a href="#about">О нас</a>
+    <a href="#menu">Меню</a>
+    <a href="#advantages">Преимущества</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#contacts">Контакты</a>
     </nav>
-    
+
+    <!-- Мобильное меню -->
+    <nav id="mobile-menu" class="nav-mobile" aria-hidden="true">
+    <a href="#main">Главная</a>
+    <a href="#about">О нас</a>
+    <a href="#menu">Меню</a>
+    <a href="#advantages">Преимущества</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#contacts">Контакты</a>
+    </nav>
+
   </header>
 
       <!-- main -->
