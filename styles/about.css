@@ -1,0 +1,262 @@
+:root {
+  --green-dark: #2f5d32;
+  --green-light: #7ba45e;
+  --wood-tone: #c7a17a;
+  --radius: 28px;
+  --transition-speed: 0.3s;
+  --font-primary: 'Inter', sans-serif;
+  --font-accent: 'Lora', serif;
+  --shadow-light: rgba(47, 93, 50, 0.15);
+  --shadow-strong: rgba(47, 93, 50, 0.25);
+}
+
+/* Основной контейнер */
+.content-section#about {
+  max-width: 900px;
+  margin: 5rem auto 6rem;
+  padding: 2rem 1.5rem 3rem;
+  color: var(--green-dark);
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  background: rgba(255 255 255 / 0.65);
+  backdrop-filter: saturate(180%) blur(14px);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px var(--shadow-light);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  transition: box-shadow var(--transition-speed) ease;
+}
+
+/* Анимация появления */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Заголовок с подчеркиванием и анимацией */
+.content-section#about h2 {
+  font-family: var(--font-accent);
+  font-size: clamp(2.8rem, 5vw, 3.4rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--green-dark);
+  position: relative;
+  cursor: default;
+  user-select: none;
+  overflow: hidden;
+}
+
+.content-section#about h2::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 5px;
+  background: linear-gradient(90deg, var(--green-dark), var(--wood-tone));
+  margin: 0.6rem auto 0;
+  border-radius: 3px;
+  box-shadow: 0 0 20px rgba(199, 161, 122, 0.53);
+  transition: width 0.4s ease;
+}
+
+.content-section#about h2:hover::after,
+.content-section#about h2:focus-visible::after {
+  width: 110px;
+}
+
+/* Основной текст */
+.content-section#about p {
+  font-size: clamp(1.15rem, 2.5vw, 1.3rem);
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  color: var(--green-light);
+  transition: color var(--transition-speed) ease;
+  cursor: default;
+}
+
+.content-section#about p:hover,
+.content-section#about p:focus-visible {
+  color: var(--green-dark);
+}
+
+/* Цитата с эффектом масштабирования */
+.content-section#about blockquote {
+  font-style: italic;
+  border-left: 6px solid #a8cbb7;
+  background-color: #e6f0e8;
+  padding: 1.2rem 1.8rem;
+  max-width: 700px;
+  margin: 3rem auto;
+  color: var(--green-dark);
+  border-radius: 14px;
+  box-shadow: 0 3px 10px var(--shadow-light);
+  transform-origin: left;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  cursor: default;
+}
+
+.content-section#about blockquote:hover,
+.content-section#about blockquote:focus-visible {
+  transform: scale(1.07);
+  box-shadow: 0 8px 20px var(--shadow-strong);
+}
+
+/* Блок ценностей */
+.content-section#about .values {
+  max-width: 700px;
+  margin: 3rem auto 3rem;
+}
+
+.content-section#about .values h3 {
+  font-family: var(--font-accent);
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--green-dark);
+  margin-bottom: 1.2rem;
+  text-align: center;
+  cursor: default;
+}
+
+/* Список ценностей с плавным эффектом */
+.content-section#about .values ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.4rem;
+}
+
+.content-section#about .values ul li {
+  background: #d9ead3;
+  color: var(--green-dark);
+  padding: 0.8rem 2rem;
+  border-radius: 40px;
+  font-weight: 600;
+  box-shadow: 0 5px 10px var(--shadow-light);
+  transition:
+    background-color var(--transition-speed) ease,
+    color var(--transition-speed) ease,
+    transform var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+  will-change: transform;
+  user-select: none;
+}
+
+.content-section#about .values ul li:hover,
+.content-section#about .values ul li:focus-visible {
+  background: var(--green-dark);
+  color: #f9f9f6;
+  box-shadow: 0 8px 16px var(--shadow-strong);
+  transform: translateY(-6px) scale(1.07);
+  outline: none;
+}
+
+/* Фото команды с плавной анимацией */
+.content-section#about .team-photo {
+  max-width: 700px;
+  margin: 3rem auto 2.5rem;
+  text-align: center;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow:
+    0 10px 30px var(--shadow-strong),
+    0 0 25px rgba(199, 161, 122, 0.15);
+  cursor: default;
+  transition: transform 0.35s ease;
+}
+
+.content-section#about .team-photo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  user-select: none;
+  filter: brightness(0.94);
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.content-section#about .team-photo:hover img,
+.content-section#about .team-photo:focus-within img {
+  transform: scale(1.07) rotate(1deg);
+  filter: brightness(1);
+}
+
+/* Кнопка с эффектом пульсации */
+.content-section#about a.btn-primary {
+  display: block;
+  margin: 0 auto;
+  background: linear-gradient(135deg, var(--green-dark), var(--wood-tone));
+  color: #fff;
+  padding: 1rem 3rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow:
+    0 12px 30px var(--shadow-strong),
+    0 0 20px rgba(199, 161, 122, 0.7);
+  transition:
+    background-color var(--transition-speed) ease,
+    transform var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.content-section#about a.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 130%;
+  height: 130%;
+  background: rgba(255 255 255 / 0.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform var(--transition-speed) ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.content-section#about a.btn-primary:hover::before,
+.content-section#about a.btn-primary:focus-visible::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.content-section#about a.btn-primary:hover,
+.content-section#about a.btn-primary:focus-visible {
+  background: linear-gradient(135deg, var(--wood-tone), var(--green-dark));
+  transform: scale(1.02);
+  box-shadow:
+    0 16px 45px var(--shadow-strong),
+    0 0 30px rgba(199, 161, 122, 0.9);
+  outline: none;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .content-section#about .values ul {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .content-section#about .values ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .content-section#about p,
+  .content-section#about blockquote,
+  .content-section#about .values,
+  .content-section#about .team-photo {
+    padding: 0 1rem;
+  }
+}
