@@ -1,0 +1,175 @@
+/* Основной контейнер */
+.content-section.advantages {
+  max-width: 960px;
+  margin: 6rem auto 8rem;
+  padding: 3rem 2rem 4rem;
+  font-family: var(--font-primary);
+  color: var(--color-primary);
+  background: linear-gradient(135deg, #f0f6ec, #e8f0df);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px var(--shadow-light);
+  text-align: center;
+  position: relative;
+  overflow: visible;
+}
+
+/* Заголовок с обновлённым стилем */
+.content-section.advantages h2 {
+  font-family: var(--font-accent);
+  font-size: clamp(2.8rem, 6vw, 3.6rem);
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  color: var(--color-primary);
+  letter-spacing: 0.08em;
+  user-select: none;
+  position: relative;
+  cursor: default;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 3px rgba(47, 93, 50, 0.1);
+}
+
+.content-section.advantages h2::after {
+  content: '';
+  display: block;
+  width: 90px;
+  height: 5px;
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+  margin: 1rem auto 0;
+  border-radius: 4px;
+  box-shadow: 0 0 15px var(--color-secondary);
+  transition: width 0.5s ease;
+}
+
+.content-section.advantages h2:hover::after,
+.content-section.advantages h2:focus-visible::after {
+  width: 130px;
+}
+
+/* Сетка преимуществ */
+.advantages-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem 3rem;
+  max-width: 960px;
+}
+
+/* Карточка преимущества — более лёгкая, с мягкой тенью и плавным масштабированием */
+.advantage-item {
+  background: #ffffffcc;
+  border-radius: 24px;
+  padding: 2rem 1.5rem;
+  box-shadow:
+    0 8px 20px rgba(123, 164, 94, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  user-select: none;
+  transition:
+    transform var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease,
+    background-color var(--transition-speed) ease;
+  will-change: transform, box-shadow;
+  min-height: 260px;
+  text-align: center;
+  color: var(--color-primary);
+  position: relative;
+  overflow: visible;
+  border: 1.5px solid transparent;
+}
+
+/* Эффект при наведении и фокусе — лёгкое масштабирование и усиление тени */
+.advantage-item:hover,
+.advantage-item:focus-visible {
+  background-color: var(--color-secondary);
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow:
+    0 20px 40px rgba(123, 164, 94, 0.35);
+  border-color: #fff;
+  outline: none;
+  z-index: 2;
+}
+
+/* Иконка — крупнее, с плавной сменой цвета */
+.icon {
+  font-size: 5.5rem;
+  margin-bottom: 1.25rem;
+  color: var(--color-muted);
+  transition: color 0.4s ease;
+  user-select: none;
+}
+
+.advantage-item:hover .icon,
+.advantage-item:focus-visible .icon {
+  color: #fff;
+}
+
+/* Текст — чуть крупнее и с увеличенным межстрочным интервалом */
+.text {
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.8;
+  max-width: 85%;
+  margin: 0 auto;
+  transition: color 0.4s ease;
+  user-select: none;
+}
+
+/* Анимация плавного появления */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Задержки анимации для каждого элемента */
+.advantage-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.advantage-item:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.advantage-item:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.advantage-item:nth-child(4) {
+  animation-delay: 0.7s;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .advantages-list {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .advantages-list {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .advantage-item {
+    min-height: auto;
+    padding: 1.8rem 1.2rem;
+  }
+  .icon {
+    font-size: 4.2rem;
+  }
+  .text {
+    font-size: 1.2rem;
+  }
+}
