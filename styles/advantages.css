@@ -16,16 +16,15 @@
 /* Заголовок с обновлённым стилем */
 .content-section.advantages h2 {
   font-family: var(--font-accent);
-  font-size: clamp(2.8rem, 6vw, 3.6rem);
-  font-weight: 800;
-  margin-bottom: 2.5rem;
-  color: var(--color-primary);
-  letter-spacing: 0.08em;
-  user-select: none;
+  font-size: clamp(2.8rem, 5vw, 3.4rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--green-dark);
   position: relative;
   cursor: default;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 3px rgba(47, 93, 50, 0.1);
+  user-select: none;
+  overflow: hidden;
 }
 
 .content-section.advantages h2::after {
@@ -173,3 +172,4 @@
     font-size: 1.2rem;
   }
 }
+
